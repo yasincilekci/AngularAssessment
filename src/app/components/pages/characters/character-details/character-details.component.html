@@ -1,0 +1,44 @@
+<div class="mb-3">
+  <a (click)="backToPage()" class="btn btn-primary">Back</a>
+</div>
+<div class="row character-detail" *ngIf="character$ | async as character">
+  <div class="col-xs-12 col-sm-3 col-md-3">
+    <img [src]="character.image" [alt]="character.name" width="100%" />
+  </div>
+
+  <div class="col-xs-12 col-sm-9 col-md-9">
+    <h2>{{ character.name }}</h2>
+    <div class="mb-2">
+      <label>id: </label>
+      <span>{{ character.id }}</span>
+    </div>
+    <div class="mb-2">
+      <label>Gender: </label>
+      <span>{{ character.gender }}</span>
+    </div>
+    <div class="mb-2">
+      <label>Created: </label>
+      <span>{{ character.created | date }}</span>
+    </div>
+    <div class="mb-2">
+      <label>Status: </label>
+      <span>{{ character.status }}</span>
+    </div>
+    <div class="mb-2">
+      <label>Species: </label>
+      <span>{{ character.species }}</span>
+    </div>
+    <div class="mb-2">
+      <label>Type: </label>
+      <span>{{ character.type }}</span>
+    </div>
+    <div class="mb-2">
+      <label>Location: </label>
+      <span>{{ character.location.name }}</span>
+    </div>
+    <div class="mb-2">
+      <label>Origin: </label>
+      <span>{{ character.origin.name }}</span>
+    </div>
+  </div>
+</div>

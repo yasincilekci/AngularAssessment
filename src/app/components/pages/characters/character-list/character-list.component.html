@@ -1,0 +1,18 @@
+<div class="row card-list">
+  <div class="col-xs-12 col-sm-6 col-md-3" *ngFor="let character of characters">
+    <div class="card-item">
+      <a [routerLink]="['/character-details', character.id]">
+        <img [src]="character.image" [alt]="character.name" />
+        <h5>{{ character.name }}</h5>
+        <span>{{ character.gender }}</span>
+        <span>{{ character.created | date }}</span>
+      </a>
+    </div>
+  </div>
+</div>
+<div
+  class="col-xs-12 col-sm-12 col-md-12 mt-5 container-notFound"
+  *ngIf="characters.length <= 0"
+>
+  <p class="mt-20 text-center">character not found</p>
+</div>
